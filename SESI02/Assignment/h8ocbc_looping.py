@@ -39,10 +39,22 @@ def isEven(number):
     else:
         return False
 
-# Loop to print even number & lower than 918 
+## For Type
+print("\n>For Type")
+# Loop to print lower than 918 & even number 
 for number in numbers:
-    if(number <= 918):
-        if(isEven(number)):
-            print(number)
-            
+    if(number <= 918 and isEven(number)):
+        print(number)
+
 print('Done')
+
+## While Type
+# Loop to print lower than 918 & even number 
+print("\n>While Type")
+while numbers:
+    if(numbers[0] <= 918 and isEven(numbers[0])):
+        print(numbers.pop(0))
+    else:
+        del numbers[0]
+else:
+    print('Done')
