@@ -40,21 +40,29 @@ def isEven(number):
         return False
 
 ## For Type
-print("\n>For Type")
+print("\n> For Type")
 # Loop to print lower than 918 & even number 
-for number in numbers:
+for i, number in enumerate(numbers):
     if(number <= 918 and isEven(number)):
         print(number)
-
-print('Done')
+    # Below code is not necessary but needed for assignment objective number 4 "Implements continue and break"
+        continue 
+    elif i + 1 == len(numbers):
+        print('Done')
+        break
+    # End: Below code is not necessary but needed for assignment objective number 4 "Implements continue and break"
+# print('Done')
 
 ## While Type
 # Loop to print lower than 918 & even number 
-print("\n>While Type")
+print("\n> While Type")
 while numbers:
     if(numbers[0] <= 918 and isEven(numbers[0])):
         print(numbers.pop(0))
+    # Below code is not necessary but needed for assignment objective number 4 "Implements continue and break"
+        continue
     else:
         del numbers[0]
+    # End: Below code is not necessary but needed for assignment objective number 4 "Implements continue and break"
 else:
     print('Done')

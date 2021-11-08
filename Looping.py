@@ -62,3 +62,24 @@ while len(a):
 print("\nOne line while loop")
 n = 5
 while n > 0: n -= 1; print(n)
+
+
+## For Loop
+print("\nFor loop")
+a = ['foo', 'bar', 'baz']
+for i in a:
+    print(i)
+    
+#Range
+print("\nRange")
+x = range(0, 100, 20)
+for n in x:
+    print(n)
+
+#Using dictionary and build in function items() and values() for dictionary
+print("\nUsing dictionary and build in function items() and values() for dictionary")
+d = {'foo': 1, 'bar': 2, 'baz': 3}
+for k in d.values():
+    print(k)
+for k, v in d.items():
+    print(k, ':', v)
