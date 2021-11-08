@@ -38,12 +38,8 @@ def isEven(number):
     else:
         return False
 
-
 for number in numbers:
     if(number <= 918):
         if(isEven(number)):
             print(number)
-print('done')
-   
-
-
+print('Done')
