@@ -32,14 +32,17 @@ numbers = [
     626, 949
 ]
 
+# Function to check odd / even number
 def isEven(number):
     if(int(number / 2) * 2 == number):
         return True
     else:
         return False
 
+# Loop to print even number & lower than 918 
 for number in numbers:
     if(number <= 918):
         if(isEven(number)):
             print(number)
+            
 print('Done')
