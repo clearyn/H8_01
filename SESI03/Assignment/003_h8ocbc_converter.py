@@ -11,8 +11,11 @@ def kelvin_to_celcius(value: float, reverse: bool = False):
     else:
         # Kelvin to celcius formula : 0K − 273.15 = -273.1°C (Google Unit Converter)
         value -=  273.15
-    return_value = (round(value, 2))
+    return_value = round(value, 2)
     return return_value
+
+print(kelvin_to_celcius(50))
+print(kelvin_to_celcius(50, True))
 
 
 def toFahrenheit(value: float, unit: str):
@@ -26,8 +29,11 @@ def toFahrenheit(value: float, unit: str):
     assert unit in ['celcius', 'kelvin'], "InvalidUnit: unit value only accept 'celcius' or 'kelvin'"
     # Celcius to Fahrenheit formula: (0°C × 9/5) + 32 = 32°F (Google Unit Converter)
     celcius = value if unit == 'celcius' else kelvin_to_celcius(value)
-    return_value = ((celcius * 9/5) + 32)
+    return_value = round(((celcius * 9/5) + 32), 2)
     return return_value
+
+print(toFahrenheit(50, 'celcius'))
+print(toFahrenheit(50, 'kelvin'))
 
 def fahrenheit_to_cf(value: float, output: str):
     """
@@ -40,7 +46,9 @@ def fahrenheit_to_cf(value: float, output: str):
     assert output in ['celcius', 'kelvin'], "InvalidOutput: unit value only accept output 'celcius' or 'kelvin'"
     # Fahrenheit to Celcius formula: (0°F − 32) × 5/9 = -17.78°C (Google Unit Converter)
     celcius = (value - 32) * (5/9)
-    return_value = celcius if output == 'celcius' else kelvin_to_celcius(celcius, reverse = True)
+    temp_value = celcius if output == 'celcius' else kelvin_to_celcius(celcius, reverse = True)
+    return_value = round(temp_value, 2)
     return return_value
 
 print(fahrenheit_to_cf(50, 'celcius'))
+print(fahrenheit_to_cf(50, 'kelvin'))
