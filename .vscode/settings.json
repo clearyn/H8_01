@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./SESI03/sesi03/pkg"
+    ]
+}
