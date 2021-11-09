@@ -67,6 +67,7 @@ print("\n> Example function with default arguments width = 50 calculate_rect(wid
 calculate_rect(length = 100)
 
 #Variable-length Arguments
+print("\n> Example function with parameter *items as tuple")
 def buy(customer_name, *items):
     for i, item in enumerate(items):
         print('customer: {customer} item number {index}: {itemname}'.format(customer = customer_name, index = i, itemname = item))
@@ -74,6 +75,14 @@ def buy(customer_name, *items):
 buy('roy', 'chocolate bar')
 buy('tia', 'eggs', 'wheat', 'flour', 'chololate bar')
 
+#Variable-length Arguments (Dictionary type)
+print("\n> Example function with parameter *items as dictionary")
+def buy_dict(customer_name, **items):
+    for i, item in enumerate(items.items()):
+        print('customer: {customer} item number {index}: {key}:{value}'.format(customer = customer_name, index = i, key = item[0], value = item[1]))
+
+buy_dict('roy', jimmy = 'chocolate bar')
+buy_dict('tia', jimmy = 'eggs', frank = 'wheat', tina = 'flour')
 
 ##Anonymous Functions
 print("\n\n> Anonymous function")
