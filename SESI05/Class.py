@@ -58,7 +58,7 @@ class Child(Mother):
 m = Mother('ani')
 print(m.nama, m.warna_rambut)
 c = Child('risa', 'green')
-print(m.nama, c.warna_rambut)
+print(c.nama, c.warna_rambut)
 
 print("\n\n> Parent vs Child Classes")
 class Dog:
