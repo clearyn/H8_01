@@ -60,7 +60,7 @@ print(m.nama, m.warna_rambut)
 c = Child('risa', 'green')
 print(c.nama, c.warna_rambut)
 
-print("\n\n> Parent vs Child Classes")
+print("\n> Parent vs Child Classes another example")
 class Dog:
     species = "Canis familiaris"
 
