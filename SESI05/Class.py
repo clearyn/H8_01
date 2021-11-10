@@ -44,6 +44,23 @@ print(jim.speak("Woof woof"))
 
 ##Parent vs Child Classes
 print("\n\n> Parent vs Child Classes")
+class Mother:
+    def __init__(self, nama, warna_rambut = 'black'):
+        self.warna_rambut = warna_rambut
+        self.nama = nama
+
+    def getWarnarRambut(self):
+        return self.warna_rambut
+class Child(Mother):
+    def __init__(self,nama, warna_rambut):
+        super().__init__(nama, warna_rambut)
+
+m = Mother('ani')
+print(m.nama, m.warna_rambut)
+c = Child('risa', 'green')
+print(m.nama, c.warna_rambut)
+
+print("\n\n> Parent vs Child Classes")
 class Dog:
     species = "Canis familiaris"
 
