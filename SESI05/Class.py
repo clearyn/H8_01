@@ -49,7 +49,7 @@ class Mother:
         self.warna_rambut = warna_rambut
         self.nama = nama
 
-    def getWarnarRambut(self):
+    def getWarnaRambut(self):
         return self.warna_rambut
 class Child(Mother):
     def __init__(self,nama, warna_rambut):
