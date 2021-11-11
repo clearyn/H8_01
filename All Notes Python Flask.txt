@@ -1,0 +1,15 @@
+// Buat venv baru
+python -m venv SESI01
+
+// Activate venv (Dalam direktori yang dibuat langkah pertama)
+Scripts\activate
+
+//Run using environtment
+1. Arahkan ke directory environtment activate dulu pakai Scripts/activate, pakai backslash "\"
+2. Setelah vnev aktif gunakan command "python nama_file.py"
+
+//Generate requirement (di execute di direktori main app)
+pip3 freeze > requirements.txt
+
+//Install (di execute di direktori main app)
+pip install -r requirements.txt
