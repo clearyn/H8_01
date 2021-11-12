@@ -11,7 +11,7 @@ app.add_api('swagger.yml')
 @app.route('/')
 def home():
     """
-    This function just responds to the browser ULR
+    This function just responds to the browser URL
     localhost:5000/
     :return:        the rendered template 'home.html'
     """
@@ -19,4 +19,4 @@ def home():
 
 # If we're running in stand alone mode, run the application
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='localhost', port=5000, debug=True)
