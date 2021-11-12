@@ -49,10 +49,10 @@ ns.model = (function() {
                 $event_pump.trigger('model_error', [xhr, textStatus, errorThrown]);
             })
         },
-        update: function(fname, lname) {
+        update: function(fname, lname, id) {
             let ajax_options = {
                 type: 'PUT',
-                url: 'api/people/' + lname,
+                url: 'api/people/' + id,
                 accepts: 'application/json',
                 contentType: 'application/json',
                 dataType: 'json',
@@ -139,6 +139,7 @@ ns.controller = (function(m, v) {
     let model = m,
         view = v,
         $event_pump = $('body'),
+        $person_id = $('#person_id'),
         $fname = $('#fname'),
         $lname = $('#lname');
 
@@ -167,13 +168,14 @@ ns.controller = (function(m, v) {
     });
 
     $('#update').click(function(e) {
-        let fname = $fname.val(),
+        let person_id = $person_id.val(),
+            fname = $fname.val(),
             lname = $lname.val();
 
         e.preventDefault();
 
         if (validate(fname, lname)) {
-            model.update(fname, lname)
+            model.update(fname, lname, person_id)
         } else {
             alert('Problem with first or last name input');
         }
@@ -181,12 +183,13 @@ ns.controller = (function(m, v) {
     });
 
     $('#delete').click(function(e) {
-        let lname = $lname.val();
+        let person_id = $person_id.val(),
+        lname = $lname.val();
 
         e.preventDefault();
 
         if (validate('placeholder', lname)) {
-            model.delete(lname)
+            model.delete(person_id)
         } else {
             alert('Problem with first or last name input');
         }
