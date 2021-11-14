@@ -12,157 +12,56 @@ basePath: /api
 
 # Paths supported by the server application
 paths:
-  /people:
+  /avocado:
     get:
-      operationId: people.read_all
+      operationId: avocado.read_all
       tags:
-        - People
-      summary: Read the entire set of people, sorted by last name
-      description: Read the entire set of people, sorted by last name
+        - Avocado
+      summary: Read the entire set of avocado
+      description: Read the entire set of avocado
       responses:
         200:
-          description: Successfully read people set operation
+          description: Successfully read avocado set operation
           schema:
             type: array
             items:
               properties:
-                person_id:
+                date:
                   type: string
-                  description: Id of the person
-                fname:
-                  type: string
-                  description: First name of the person
-                lname:
-                  type: string
-                  description: Last name of the person
-                timestamp:
-                  type: string
-                  description: Creation/Update timestamp of the person
-
-    post:
-      operationId: people.create
-      tags:
-        - People
-      summary: Create a person
-      description: Create a new person
-      parameters:
-        - name: person
-          in: body
-          description: Person to create
-          required: True
-          schema:
-            type: object
-            properties:
-              fname:
-                type: string
-                description: First name of person to create
-              lname:
-                type: string
-                description: Last name of person to create
-      responses:
-        201:
-          description: Successfully created person
-          schema:
-            properties:
-              person_id:
-                type: string
-                description: Id of the person
-              fname:
-                type: string
-                description: First name of the person
-              lname:
-                type: string
-                description: Last name of the person
-              timestamp:
-                type: string
-                description: Creation/Update timestamp of the person record
-
-  /people/{person_id}:
-    get:
-      operationId: people.read_one
-      tags:
-        - People
-      summary: Read one person
-      description: Read one person
-      parameters:
-        - name: person_id
-          in: path
-          description: Id of the person to get
-          type: integer
-          required: True
-      responses:
-        200:
-          description: Successfully read person from people data operation
-          schema:
-            type: object
-            properties:
-              person_id:
-                type: string
-                description: Id of the person
-              fname:
-                type: string
-                description: First name of the person
-              lname:
-                type: string
-                description: Last name of the person
-              timestamp:
-                type: string
-                description: Creation/Update timestamp of the person record
-
-    put:
-      operationId: people.update
-      tags:
-        - People
-      summary: Update a person
-      description: Update a person
-      parameters:
-        - name: person_id
-          in: path
-          description: Id the person to update
-          type: integer
-          required: True
-        - name: person
-          in: body
-          schema:
-            type: object
-            properties:
-              fname:
-                type: string
-                description: First name of the person
-              lname:
-                type: string
-                description: Last name of the person
-      responses:
-        200:
-          description: Successfully updated person
-          schema:
-            properties:
-              person_id:
-                type: string
-                description: Id of the person in the database
-              fname:
-                type: string
-                description: First name of the person
-              lname:
-                type: string
-                description: Last name of the person
-              timestamp:
-                type: string
-                description: Creation/Update timestamp of the person record
-
-    delete:
-      operationId: people.delete
-      tags:
-        - People
-      summary: Delete a person from the people list
-      description: Delete a person
-      parameters:
-        - name: person_id
-          in: path
-          type: integer
-          description: Id of the person to delete
-          required: true
-      responses:
-        200:
-          description: Successfully deleted a person
-
+                  description: date of the avocado
+                avgprice:
+                  type: number
+                  format: double
+                  description: avgprice of the person
+                totalvol:
+                  type: integer
+                  description: totalvol of the person
+                avo_a:
+                  type: integer
+                  description: avo_a of the person
+                avo_b:
+                  type: number
+                  format: double
+                  description: avo_b of the person
+                avo_c:
+                  type: number
+                  format: double
+                  description: avo_c of the person
+                type:
+                  type: object
+                  properties:
+                    typeid:
+                      type: integer
+                      description: typeid of associated avocado
+                    type:
+                      type: string
+                      description: type of associated avocado
+                regionid:
+                  type: object
+                  properties:
+                    regionid:
+                      type: integer
+                      description: regionid of associated avocado
+                    region:
+                      type: string
+                      description: region of associated avocado
