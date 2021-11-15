@@ -1,0 +1,8 @@
+Project: 003_h8ocbc_deployment
+Assignment: 3
+Nama: Ryan Cleary
+Kode: FSDO001ONL003
+
+Github Url: https://github.com/clearyn/h8ocbc_deployment
+Heroku Url: https://hacktiv8-flask-rest-ryan-003.herokuapp.com/
+Heroku Swagger Url: https://hacktiv8-flask-rest-ryan-003.herokuapp.com/api/ui/

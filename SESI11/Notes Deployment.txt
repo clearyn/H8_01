@@ -1,0 +1,22 @@
+1.git init
+//Add gunicorn & psycopg
+2.echo "web: gunicorn app:connex_app" > Procfile (connex_app diganti nama app di main) 
+3.And add psycopg2 and gunicorn to your requirements.txt.
+//Generate requirement txt
+4.pip3 freeze > requirements.txt
+//Create heroku app & postgre
+5.heroku create hacktiv8-flask-rest (CHANGE WITH YOUR OWN NAME
+6.heroku addons:create heroku-postgresql:hobby-dev --app hacktiv8-flask-rest
+7.heroku config --app hacktiv8-flask-rest
+//Now that you have got your Database URL,
+//replace the value ofapp.config[‘SQLALCHEMY_DATABASE_URI’] line in the “config.py” file with this Database URL.
+//Because of Heroku update, URI should start with postgresql:// instead of postgres://. SQLAlchemyused to accept both, but has removed support for the postgres name.
+8.git add .
+9.git commit -m "Add Heroku deployment files"
+10.heroku git:remote -a hacktiv8-flask-rest
+11.git push heroku master
+
+
+//Generate database from sqlite to postgre
+1.heroku run python
+2.exec(open("build_database.py").read())

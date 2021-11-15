@@ -1,5 +1,11 @@
 {
-    "python.analysis.extraPaths": [
-        "./SESI03/sesi03/pkg"
-    ]
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./SESI12",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true
 }
